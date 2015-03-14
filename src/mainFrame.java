@@ -54,7 +54,7 @@ public class mainFrame extends JFrame implements ActionListener {
         setResizable(false);
         setSize(new Dimension(400, 400));
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
 
         /* initialize all the instance variables */
