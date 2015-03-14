@@ -53,6 +53,7 @@ public class mainFrame extends JFrame implements ActionListener {
         /* set up main frame: */
         setResizable(false);
         setSize(new Dimension(400, 400));
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
@@ -78,10 +79,32 @@ public class mainFrame extends JFrame implements ActionListener {
         optionsBtn.addActionListener(this);
     }
 
+    /**
+     * All the event handling that is done by the main frame
+     * That is mainly the reacting to, and setting of the
+     * optionsBtn
+     *
+     * @param e Event Object that tells us where the event comes from
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == optionsBtn) {
-            //TODO Make Options panel appear
+        if(e.getSource() == optionsBtn && optionsBtn.getText().equals("Options")) {
+            // swap panels
+            p.remove(graphicsPanel);
+            p.add(optionsPanel);
+            // swap text
+            optionsBtn.setText("Back to Game");
+            // make changes appear correctly
+            repaint();
+        }
+        else if(e.getSource() == optionsBtn && optionsBtn.getText().equals("Back to Game")) {
+            // swap panels
+            p.remove(optionsPanel);
+            p.add(graphicsPanel);
+            // swap text
+            optionsBtn.setText("Options");
+            // make changes appear correctly
+            repaint();
         }
     }
 
