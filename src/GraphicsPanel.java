@@ -38,7 +38,6 @@ public class GraphicsPanel extends JPanel implements ActionListener {
     /** This remembers what state the game is in (STARTMENU for the play button, INGAME for gameplay) */
     GameState state;
 
-
     ///////////////////////
     //  --- Methods ---  //
     ///////////////////////
