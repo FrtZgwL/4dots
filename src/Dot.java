@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by Cedric on 15.03.2015.
  */
-public class Dot {
+public class Dot implements GameColors {
 
     /////////////////////////
     //  --- Constants ---  //
@@ -29,17 +29,27 @@ public class Dot {
     //  --- Methods ---  //
     ///////////////////////
 
+    /**
+     * Constructor for Dot that allows setting of the Color
+     * @param color The Color the dot is supposed to have
+     */
+    public Dot(Color color) {
+        // use standard constructor
+        this();
+        // but allow setting of the color
+        this.color = color;
+    }
+
     public Dot() {
         // Create random number generator from system time
         Random rg = new Random(System.currentTimeMillis());
-        // use rg to create randomness
-        int r = rg.nextInt(255);
-        int g = rg.nextInt(255);
-        int b = rg.nextInt(255);
+        // the game only has the 4 Colors specified in the GameColors defined in the GameColors Interface,
+        // so we just choose a index from 0-3
+        int colorIndex = rg.nextInt(3);
 
         // Initialize all the stuff
         ellipse = new Ellipse2D.Double(0, 0, Dot.SIZE.getWidth(), Dot.SIZE.getHeight());
-        color = new Color(r, g, b);
+        this.color = COLORS[colorIndex];
     }
 
     public Ellipse2D getEllipse() {
