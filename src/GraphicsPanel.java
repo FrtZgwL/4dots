@@ -64,7 +64,11 @@ public class GraphicsPanel extends JPanel implements ActionListener {
     @Override
     protected void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
-        g2.drawString("I am " + getWidth() + "W, " + getHeight() + "H Big!", 150, 100);
+
+        float height = (float)getHeight();
+        float width  = (float)getWidth();
+
+        g2.drawString("I am " + width + "W, " + height + "H Big!", width/2, height/2);
 
         switch (state) {
             case STARTMENU:
