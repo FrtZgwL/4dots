@@ -51,7 +51,7 @@ public class mainFrame extends JFrame implements ActionListener {
     public mainFrame() {
 
         /* set up main frame: */
-        setResizable(true);
+        setResizable(false);
         setSize(new Dimension(400, 400));
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -113,6 +113,8 @@ public class mainFrame extends JFrame implements ActionListener {
      * @param args Command line arguments for main program
      */
     public static void main(String[] args) {
+
+        System.out.println("Welcome to our first test application of our 4dots mini-game.");
 
         mainFrame main = new mainFrame();
 
