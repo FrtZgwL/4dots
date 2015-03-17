@@ -86,7 +86,7 @@ public class GraphicsPanel extends JPanel implements GameColors, ActionListener 
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D) g;
-        g2.drawString("I am " + getWidth() + "W, " + getHeight() + "H Big!", 50, 100);
+        g2.drawString("I am " + getWidth() + "W, " + getHeight() + "H Big!", 150, 100);
 
         switch (state) {
             case STARTMENU:
