@@ -87,8 +87,8 @@ public class GraphicsPanel extends JPanel implements GameColors, ActionListener 
 
         Graphics2D g2 = (Graphics2D) g;
 
-        float height = (float)getHeight();
-        float width  = (float)getWidth();
+        float height = (float)getHeight();  //Variable saving the Height
+        float width  = (float)getWidth();   //Variable saving the Width
 
         g2.drawString("I am " + width + "W, " + height + "H Big!", width/2, height/2);
 
