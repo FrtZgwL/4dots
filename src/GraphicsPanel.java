@@ -34,6 +34,11 @@ public class GraphicsPanel extends JPanel implements GameColors, ActionListener 
     //  --- Instance Variables ---  //
     //////////////////////////////////
 
+    /** This saves the value of window size */
+
+    public int height;  //Variable saving the Height
+    public int width;   //Variable saving the Width
+
     /** This keeps kicking out events so we can have animation */
     Timer update;
 
@@ -87,10 +92,18 @@ public class GraphicsPanel extends JPanel implements GameColors, ActionListener 
 
         Graphics2D g2 = (Graphics2D) g;
 
-        float height = (float)getHeight();  //Variable saving the Height
-        float width  = (float)getWidth();   //Variable saving the Width
+        /////////////////////////////////////////
+        //                                     //
+        //    Variables getting their value    //
+        //                                     //
+        /////////////////////////////////////////
 
-        g2.drawString("I am " + width + "W, " + height + "H Big!", width/2, height/2);
+
+        width  = (int)getWidth();
+        height = (int)getHeight();
+
+
+        g2.drawString("I am " + width + "W, " + height + "H Big!", (width/2)-65, height/2);
 
         switch (state) {
             case STARTMENU:
@@ -127,8 +140,8 @@ public class GraphicsPanel extends JPanel implements GameColors, ActionListener 
                     for(int i = 0; i < 4; i++) {
                         Ellipse2D ellipse = cornerDots[i].getEllipse();
                         Point center = new Point(
-                                (int) ( getWidth()/2 +  Math.sin( i* (.5 * Math.PI)) * 100 ),
-                                (int) ( getHeight()/2 + Math.cos( i* (.5 * Math.PI)) * 100 )
+                                (int) ( width/2 +  Math.sin( i* (.5 * Math.PI)) * 100 ),
+                                (int) ( height/2 + Math.cos( i* (.5 * Math.PI)) * 100 )
                                 //TODO Put all of this math in a TweenAccessor for Dot that allows you to tween the rotation by giving radius, position and center
                         );
                         Point corner = new Point(
