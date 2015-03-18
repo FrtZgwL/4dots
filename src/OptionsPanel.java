@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,5 +21,16 @@ public class OptionsPanel extends JPanel {
     ///////////////////////
     //  --- Methods ---  //
     ///////////////////////
+
+    public OptionsPanel() {
+
+
+
+
+    }
+
+
+
+
 
 }

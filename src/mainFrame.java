@@ -36,6 +36,13 @@ public class mainFrame extends JFrame implements ActionListener {
     private JButton optionsBtn;
 
     /**
+     * button that can be clicked to
+     * start the game
+     */
+
+    private JButton startBtn;
+
+    /**
      * panel that displays all the game
      * graphics.also handles events and
      * every thing, this basically IS the game.
@@ -52,7 +59,7 @@ public class mainFrame extends JFrame implements ActionListener {
 
         /* set up main frame: */
         setResizable(false);
-        setSize(new Dimension(400, 400));
+        setSize(new Dimension(400, 500));
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
@@ -63,11 +70,13 @@ public class mainFrame extends JFrame implements ActionListener {
         optionsPanel = new OptionsPanel();
 
         optionsBtn = new JButton("Options");
+        startBtn   = new JButton("Start Game");
 
 
         /* add all the things */
         JPanel temp = new JPanel();
         temp.add(optionsBtn);
+        temp.add(startBtn);
 
         p.add(temp, BorderLayout.SOUTH);
         p.add(graphicsPanel, BorderLayout.CENTER);
@@ -77,6 +86,7 @@ public class mainFrame extends JFrame implements ActionListener {
 
         /* set up event handling */
         optionsBtn.addActionListener(this);
+        startBtn.addActionListener(this);
     }
 
     /**

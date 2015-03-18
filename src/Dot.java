@@ -11,7 +11,7 @@ public class Dot implements GameColors {
     //  --- Constants ---  //
     /////////////////////////
 
-    private static final Dimension SIZE = new Dimension(50, 50);
+    private static final Dimension SIZE = new Dimension(40, 40);
 
 
     //////////////////////////////////
