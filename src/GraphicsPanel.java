@@ -120,20 +120,6 @@ public class GraphicsPanel extends JPanel implements GameColors, ActionListener 
             switch (state) {
                 case STARTMENU:
                     // animate the start menu
-                    for(int i = 0; i < 4; i++) {
-                        Ellipse2D ellipse = cornerDots[i].getEllipse();
-                        Point center = new Point(
-                                (int) ( getWidth()/2 +  Math.sin( i* (.5 * Math.PI)) * 100 ),
-                                (int) ( getHeight()/2 + Math.cos( i* (.5 * Math.PI)) * 100 )
-                                //TODO Put all of this math in a TweenAccessor for Dot that allows you to tween the rotation by giving radius, position and center
-                        );
-                        Point corner = new Point(
-                                (int) (center.getX() - (ellipse.getWidth() / 2)),
-                                (int) (center.getY() - (ellipse.getHeight() / 2))
-                        );
-
-                        ellipse.setFrameFromCenter(center,corner);
-                    }
                     break;
                 case INGAME:
                     // animate the game
