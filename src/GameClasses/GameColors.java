@@ -1,3 +1,5 @@
+package GameClasses;
+
 import java.awt.*;
 
 /**

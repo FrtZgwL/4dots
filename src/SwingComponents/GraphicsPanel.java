@@ -1,3 +1,9 @@
+package SwingComponents;
+
+import GameClasses.Dot;
+import GameClasses.GameColors;
+import GameClasses.RotatingDot;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -29,6 +35,9 @@ public class GraphicsPanel extends JPanel implements GameColors, ActionListener 
     /* how many dots show up every second */
     //private final int difficulty;
 
+    /** Sorry but I'm to bad to write this stuff dynamic so I had to hardcode the size. */
+    private static final Dimension GP_SIZE = new Dimension(394, 336);
+
 
     //////////////////////////////////
     //  --- Instance Variables ---  //
@@ -44,7 +53,7 @@ public class GraphicsPanel extends JPanel implements GameColors, ActionListener 
     // --- Graphics Objects --- //
 
     /** The 4 dots in the corners that you are supposed to swipe all the other ones to */
-    Dot[] cornerDots;
+    RotatingDot[] cornerDots;
 
     /** Linked list containing the intractable Dots in the game */
     LinkedList<Dot> gameDots;
@@ -65,11 +74,23 @@ public class GraphicsPanel extends JPanel implements GameColors, ActionListener 
         update = new Timer(10, this);
         state = GameState.STARTMENU;
 
-        cornerDots = new Dot[4];
-        cornerDots[0] = new Dot(COLORS[0]);
-        cornerDots[1] = new Dot(COLORS[1]);
-        cornerDots[2] = new Dot(COLORS[2]);
-        cornerDots[3] = new Dot(COLORS[3]);
+        cornerDots = new RotatingDot[4];
+        cornerDots[0] = new RotatingDot(GameColors.COLORS[0]);
+        cornerDots[1] = new RotatingDot(GameColors.COLORS[1]);
+        cornerDots[2] = new RotatingDot(GameColors.COLORS[2]);
+        cornerDots[3] = new RotatingDot(GameColors.COLORS[3]);
+
+         // put them things in the right positions
+        double x = GP_SIZE.getWidth()/2;
+        double y = GP_SIZE.getHeight()/2;
+        for(int i = 0; i < 4; i++) {
+            cornerDots[i].getEllipse().setFrameFromCenter(
+                    x, y - 100,
+                    x - cornerDots[i].getEllipse().getWidth()/2,
+                    y - cornerDots[i].getEllipse().getHeight()/2 - 100
+            );
+            cornerDots[i].setRotationCenter(new Point((int) x, (int) y));
+        }
 
         // start update timer
         update.start();
@@ -120,6 +141,9 @@ public class GraphicsPanel extends JPanel implements GameColors, ActionListener 
             switch (state) {
                 case STARTMENU:
                     // animate the start menu
+                    for(int i = 0; i < 4; i++)
+                        cornerDots[i].setRotation(i*.5*Math.PI);
+
                     break;
                 case INGAME:
                     // animate the game

@@ -1,9 +1,12 @@
+package TweenAccessors;
+
+import GameClasses.Dot;
 import aurelienribon.tweenengine.TweenAccessor;
 
 /**
  * Created by Cedric on 17.03.2015.
  *
- * Java Universal Tween Engine - Tween Accessor for Dot
+ * Java Universal Tween Engine - Tween Accessor for GameClasses.Dot
  */
 public class DotAccessor implements TweenAccessor<Dot> {
 

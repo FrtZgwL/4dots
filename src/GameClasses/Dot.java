@@ -1,3 +1,5 @@
+package GameClasses;
+
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.util.Random;
@@ -30,7 +32,7 @@ public class Dot implements GameColors {
     ///////////////////////
 
     /**
-     * Constructor for Dot that allows setting of the Color
+     * Constructor for GameClasses.Dot that allows setting of the Color
      * @param color The Color the dot is supposed to have
      */
     public Dot(Color color) {
@@ -43,7 +45,7 @@ public class Dot implements GameColors {
     public Dot() {
         // Create random number generator from system time
         Random rg = new Random(System.currentTimeMillis());
-        // the game only has the 4 Colors specified in the GameColors defined in the GameColors Interface,
+        // the game only has the 4 Colors specified in the GameClasses.GameColors defined in the GameClasses.GameColors Interface,
         // so we just choose a index from 0-3
         int colorIndex = rg.nextInt(3);
 

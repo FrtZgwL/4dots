@@ -1,3 +1,5 @@
+package GameClasses;
+
 import java.awt.*;
 
 /**
@@ -81,7 +83,8 @@ public class RotatingDot extends Dot {
      * center in radian's
      */
     public double getRotation() {
-        double x = Math.abs(rotationCenter.getX() - getEllipse().getCenterX());
+        //TODO Finish this
+        //TODO then use it to make ANIMATION!!!
         return .0;
     }
 }

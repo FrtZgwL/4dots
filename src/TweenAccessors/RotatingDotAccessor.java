@@ -1,3 +1,6 @@
+package TweenAccessors;
+
+import GameClasses.RotatingDot;
 import aurelienribon.tweenengine.TweenAccessor;
 
 /**
