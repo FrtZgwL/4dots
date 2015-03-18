@@ -38,7 +38,7 @@ public class mainFrame extends JFrame implements ActionListener {
     /**
      * panel that displays all the game
      * graphics.also handles events and
-     * every thing this basically IS the game.
+     * every thing, this basically IS the game.
      */
     private GraphicsPanel graphicsPanel;
 

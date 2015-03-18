@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="tween-engine-api-6.3.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Tolle Bibliotheken/tween-engine-api-6.3.3.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="jar://$PROJECT_DIR$/../../Tolle Bibliotheken/tween-engine-api-6.3.3.zip!/" recursive="false" />
+  </library>
+</component>
